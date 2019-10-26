@@ -1,13 +1,3 @@
-fetch('http://localhost:3000/weather').then((response)=>{
-
-    response.json().then((data) => {
-    if(!data.error){
-        console.log(data)
-    }else{
-        console.log(data)
-    }
-})
-})
 
 var inputLocation = document.querySelector('form')
 var search = document.querySelector('input')
@@ -20,7 +10,7 @@ inputLocation.addEventListener('submit',(e) =>{
     var location = search.value
     message1.textContent = 'Loading........'
     message2.textContent = ''
-    fetch('http://localhost:3000/weather?address=' + location).then((response)=>{
+    fetch('/weather?address=' + location).then((response)=>{
 
     response.json().then((data) => {
     if(!data.error){
